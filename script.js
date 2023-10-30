@@ -12,17 +12,17 @@ if (navigator.mediaDevices.getUserMedia) {
   });
 }
 
-function capturevdo(vdo) {
+function captureVideo(video) {
   var canvas = document.createElement('canvas');
-  canvas.width = vdo.vdoWidth;
-  canvas.height = vdo.vdoHeight;
+  canvas.width = video.vdoWidth;
+  canvas.height = video.vdoHeight;
   var canvasContext = canvas.getContext('2d');
-  canvasContext.drawImage(vdo, 0, 0);
+  canvasContext.drawImage(video, 0, 0);
   return canvas.toDataURL('image/png');
 }
 
 function showImg() {
-  var src = capturevdo(vdo)
+  var src = captureVideo(vdo)
   vdo.setAttribute('hidden')
   if (!!img === false) {
     img = document.createElement('img')
