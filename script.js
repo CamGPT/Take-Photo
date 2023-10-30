@@ -8,15 +8,15 @@ if (navigator.mediaDevices.getUserMedia) {
     vdo.srcObject = stream;
   })
   .catch(function(error) {
-    console.log("Something went wrong!");
+    console.log('Something went wrong!');
   });
 }
 
 function capturevdo(vdo) {
-  var canvas = document.createElement("canvas");
+  var canvas = document.createElement('canvas');
   canvas.width = vdo.vdoWidth;
   canvas.height = vdo.vdoHeight;
-  var canvasContext = canvas.getContext("2d");
+  var canvasContext = canvas.getContext('2d');
   canvasContext.drawImage(vdo, 0, 0);
   return canvas.toDataURL('image/png');
 }
