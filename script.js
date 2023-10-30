@@ -1,28 +1,54 @@
-var video = document.querySelector("#videoElement");
+var btn = document.querySelector('button')
+var vdo = document.querySelector("#vdoElement");
+var img
 
 if (navigator.mediaDevices.getUserMedia) {       
-    navigator.mediaDevices.getUserMedia({video: true})
+    navigator.mediaDevices.getUserMedia({vdo: true})
   .then(function(stream) {
-    video.srcObject = stream;
+    vdo.srcObject = stream;
   })
   .catch(function(error) {
     console.log("Something went wrong!");
   });
 }
 
-function captureVideo(video) {
+function capturevdo(vdo) {
   var canvas = document.createElement("canvas");
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  canvas.width = vdo.vdoWidth;
+  canvas.height = vdo.vdoHeight;
   var canvasContext = canvas.getContext("2d");
-  canvasContext.drawImage(video, 0, 0);
+  canvasContext.drawImage(vdo, 0, 0);
   return canvas.toDataURL('image/png');
 }
 
-function capture() {
-  var src = captureVideo(video)
-  video.remove()
-  let img = document.createElement('img')
+function showImg() {
+  var src = capturevdo(vdo)
+  vdo.setAttribute('hidden')
+  if (!!img === false) {
+    img = document.createElement('img')
+  }
+  else {
+    img.removeAttribute('hidden')
+  }
   img.src = src
 	document.body.prepend(img)
+  
+  button.textContent = 'Video'
+  button.setAttribute('onclick', 'showVdo()')
+}
+
+function showVdo() {
+  var src = captureVideo(vdo)
+  vdo.setAttribute('hidden')
+  if (!!img === false) {
+    img = document.createElement('img')
+  }
+  else {
+    img.removeAttribute('hidden')
+  }
+  img.src = src
+	document.body.prepend(img)
+
+  button.textContent = 'Capture'
+  button.setAttribute('onclick', 'showImg()')
 }
