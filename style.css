@@ -1,4 +1,12 @@
 html, body {
+  margin: 0;
+  margin-inline: auto;
   height: 100%;
-  width: 100%;
+  width: fit-content;
+}
+
+button {
+  margin-top: 1rem;
+  display: block;
+  margin-inline: auto;
 }

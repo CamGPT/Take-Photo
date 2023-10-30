@@ -2,52 +2,11 @@
   <head>
     <meta content="Display Webcam Stream" name="title">
     <title>Display Webcam Stream</title>
-    <style>
-      html, body {
-	      margin: 0;
-        margin-inline: auto;
-        height: 100%;
-        width: fit-content;
-      }
-
-      button {
-        margin-top: 1rem;
-        display: block;
-        margin-inline: auto;
-      }
-      </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <video autoplay="true" id="videoElement"></video>
     <button onclick="capture()">Capture</button>
-    <script>
-      var video = document.querySelector("#videoElement");
-
-      if (navigator.mediaDevices.getUserMedia) {       
-	      navigator.mediaDevices.getUserMedia({video: true})
-        .then(function(stream) {
-          video.srcObject = stream;
-        })
-        .catch(function(error) {
-          console.log("Something went wrong!");
-        });
-      }
-
-    function captureVideo(video) {
-        var canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        var canvasContext = canvas.getContext("2d");
-        canvasContext.drawImage(video, 0, 0);
-        return canvas.toDataURL('image/png');
-    }
-
-    function capture() {
-      var src = captureVideo(video)
-      video.remove()
-      let img = document.createElement('img')
-      img.src = src
-      document.body.prepend(img)
-    }
-    </script>
-  </body></html>
+    <script src="script.js"></script>
+  </body>
+</html>
