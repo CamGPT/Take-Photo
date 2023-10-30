@@ -1,5 +1,5 @@
 var btn = document.querySelector('button')
-var vdo = document.querySelector("video");
+var vdo = document.querySelector('video');
 var img
 
 if (navigator.mediaDevices.getUserMedia) {       
