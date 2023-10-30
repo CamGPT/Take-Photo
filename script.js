@@ -3,7 +3,7 @@ var vdo = document.querySelector('video');
 var img
 
 if (navigator.mediaDevices.getUserMedia) {       
-    navigator.mediaDevices.getUserMedia({vdo: true})
+  navigator.mediaDevices.getUserMedia({video: true})
   .then(function(stream) {
     vdo.srcObject = stream;
   })
