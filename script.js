@@ -39,15 +39,8 @@ function showImg() {
 
 function showVdo() {
   var src = captureVideo(vdo)
-  vdo.setAttribute('hidden')
-  if (!!img === false) {
-    img = document.createElement('img')
-  }
-  else {
-    img.removeAttribute('hidden', '')
-  }
-  img.src = src
-	document.body.prepend(img)
+  vdo.removeAttribute('hidden')
+  img.setAttribute('hidden', '')
 
   btn.textContent = 'Capture'
   btn.setAttribute('onclick', 'showImg()')
