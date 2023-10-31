@@ -23,7 +23,7 @@ function captureVideo(video) {
 
 function showImg() {
   var src = captureVideo(vdo)
-  vdo.setAttribute('hidden')
+  vdo.setAttribute('hidden', '')
   if (!!img === false) {
     img = document.createElement('img')
   }
