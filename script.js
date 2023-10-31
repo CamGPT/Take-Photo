@@ -33,8 +33,8 @@ function showImg() {
   img.src = src
 	document.body.prepend(img)
   
-  button.textContent = 'Video'
-  button.setAttribute('onclick', 'showVdo()')
+  btn.textContent = 'Video'
+  btn.setAttribute('onclick', 'showVdo()')
 }
 
 function showVdo() {
@@ -49,6 +49,6 @@ function showVdo() {
   img.src = src
 	document.body.prepend(img)
 
-  button.textContent = 'Capture'
-  button.setAttribute('onclick', 'showImg()')
+  btn.textContent = 'Capture'
+  btn.setAttribute('onclick', 'showImg()')
 }
