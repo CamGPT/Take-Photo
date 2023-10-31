@@ -14,8 +14,8 @@ if (navigator.mediaDevices.getUserMedia) {
 
 function captureVideo(video) {
   var canvas = document.createElement('canvas');
-  canvas.width = video.vdoWidth;
-  canvas.height = video.vdoHeight;
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
   var canvasContext = canvas.getContext('2d');
   canvasContext.drawImage(video, 0, 0);
   return canvas.toDataURL('image/png');
