@@ -44,7 +44,7 @@ function showVdo() {
     img = document.createElement('img')
   }
   else {
-    img.removeAttribute('hidden')
+    img.removeAttribute('hidden', '')
   }
   img.src = src
 	document.body.prepend(img)
